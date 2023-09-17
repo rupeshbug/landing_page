@@ -1,8 +1,18 @@
+import Navbar from './components/Navbar'
+import HeroSection from './components/HeroSection'
+import background from './assets/background.svg'
+
 function App() {
   return (
-    <>
-     <h1>Hello world</h1>
-    </>
+    <div className='text-white' style={{
+      background: `url(${background})`,
+      backgroundSize: 'cover', 
+      backgroundAttachment: 'fixed', 
+      minHeight: '100vh',
+    }}>
+      <Navbar />
+      <HeroSection />
+    </div>
   )
 }
 
