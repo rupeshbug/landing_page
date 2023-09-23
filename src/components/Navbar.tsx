@@ -1,14 +1,20 @@
-import { FaBars } from 'react-icons/fa'
-import { FaTimes } from 'react-icons/fa';
-import logo from '../assets/logo.png'
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { useState } from 'react';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
   return (
     <>
-      <div className='flex items-center justify-between w-100 py-1 px-5 md:px-10 text-white'>
+      <div className='flex items-center justify-between w-100 py-2 px-5 text-white lg:px-20'>
         <div className='flex items-center justify-between w-1/5'>
           <div>
-            <img src={logo} alt='Logo' style={{height: '75px', width: '80px', borderRadius: '50%'}} />
+            <img src={logo} alt='Logo' style={{ height: '70px', width: '80px', borderRadius: '50%' }} />
           </div>
           <ul className='hidden md:flex justify-between w-2/5 space-x-4 text-lg cursor-pointer'>
             <li className="hover:text-slate-300">Features</li>
@@ -20,16 +26,16 @@ const Navbar = () => {
           <button className='font-bold hover:text-slate-300 border border-transparent'>Sign in</button>
           <button className='bg-buttonColor text-white px-4 py-2 rounded hover:bg-buttonHoverColor'>Start free trial</button>
         </div>
-        <div className="md:hidden cursor-pointer">
+        <div className="md:hidden cursor-pointer" onClick={toggleNav}>
           <FaBars className="text-2xl" />
         </div>
       </div>
       {/* navigation for small screen */}
-      <div className="p-3">
-        <div className="bg-gray-900 flex flex-col py-7 px-5 rounded-lg md:px-10 md:hidden">
+      {isNavOpen && (
+        <div className="mt-1 mx-2 fixed inset-0 bottom-1/2 bg-gray-900 flex flex-col py-5 px-5 rounded-lg md:px-10 md:hidden">
           <div className="flex items-center justify-between">
-            <img src={logo} alt="logo" height={70} width={70} style={{borderRadius: "50%"}} />
-            <FaTimes className="text-2xl" />
+            <img src={logo} alt="logo" height={70} width={70} style={{ borderRadius: "50%" }} />
+            <FaTimes className="text-2xl cursor-pointer" onClick={toggleNav} />
           </div>
           <ul className="text-lg mt-4 flex flex-col">
             <li className="hover:text-slate-300 mb-2">Features</li>
@@ -41,9 +47,10 @@ const Navbar = () => {
             <button className='bg-buttonColor text-white px-4 py-2 rounded hover:bg-buttonHoverColor'>Start free trial</button>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
 
 export default Navbar;
+

@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import background from './assets/background.svg'
+import Features from './components/Features'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     }}>
       <Navbar />
       <HeroSection />
+      <Features />
     </div>
   )
 }
