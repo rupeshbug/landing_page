@@ -8,8 +8,8 @@ body, html {
 }
 
 .glass-morphism-effect {
-    background: rgba(255, 255, 255, 0.1); /* Adjust the background opacity as needed */
-    backdrop-filter: blur(10px); /* Adjust the blur strength as needed */
-    border: 1px solid rgba(255, 255, 255, 0.10); /* Adjust the border as needed */
-    border-radius: 10px; /* Adjust the border radius as needed */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 10px;
   }
