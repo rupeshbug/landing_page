@@ -9,7 +9,42 @@ body, html {
 
 .glass-morphism-effect {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px); 
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.10); 
     border-radius: 10px;
-  }
+}
+
+.border-opacity {
+    border-color: rgba(239, 232, 232, 0.2);
+}
+
+.hoverTestimonials:hover {
+    opacity: 0.8;
+}
+  
+.hoverTestimonials:hover img {
+    border: 2px solid #fff;
+}
+  
+
+.hoverTestimonials img {
+    border: none; 
+}
+
+@media (max-width: 700px) {
+    .testimonial {
+      width: 100%;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    .testimonial {
+      width: 45%;
+    }
+}
+
+@media (min-width: 1001px) {
+    .testimonial {
+      width: 30%;
+    }
+}
